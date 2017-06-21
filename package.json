@@ -1,27 +1,31 @@
 {
   "name": "voiced",
-  "version": "0.1.0",
-  "private": true,
-  "devDependencies": {
-    "cross-env": "^5.0.1",
-    "react-scripts": "1.0.7"
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "frontandback": "concurrently \"npm start\" \"cd client && npm start\""
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johncmunson/voiced.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johncmunson/voiced/issues"
+  },
+  "homepage": "https://github.com/johncmunson/voiced#readme",
   "dependencies": {
     "axios": "^0.16.2",
-    "lodash": "^4.17.4",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-redux": "^5.0.5",
-    "react-router-dom": "^4.1.1",
-    "redux": "^3.7.0",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0",
-    "styled-components": "^2.1.0"
-  },
-  "scripts": {
-    "start": "cross-env PORT=3000 react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "body-parser": "^1.17.2",
+    "concurrently": "^3.4.0",
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "eyes": "^0.1.8",
+    "nodemon": "^1.11.0"
   }
 }
