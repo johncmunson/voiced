@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Modal from './Modal.js'
 
 const Wrapper = styled.div`
     margin-left: auto;
@@ -32,7 +33,11 @@ class QA extends React.Component {
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                                 <b>Page:&nbsp;</b>{url.pathname}
                             </div>
-                            <button>Voice it!</button>
+                            <button
+                                onClick={() => this.props.toggleModal()}
+                            >
+                                Voice it!
+                            </button>
                         </TopRow>
                         <br />
                         <br />
@@ -61,6 +66,39 @@ class QA extends React.Component {
                                 ))}
                             </tbody>
                         </table>
+                        <Modal
+                            show={this.props.modal}
+                            toggleModal={this.props.toggleModal}
+                        >
+                            <p><b>Where would you like to publish to?</b></p>
+                            <input
+                                type="checkbox"
+                                name="amazon"
+                                checked={this.props.vendors.amazon}
+                                onChange={(e) => this.props.updateVendorSelection(e.target.name)}
+                            /><span>Amazon Echo / Alexa</span>
+                            <br />
+                            <br />
+                            <input
+                                type="checkbox"
+                                name="google"
+                                checked={this.props.vendors.google}
+                                onChange={(e) => this.props.updateVendorSelection(e.target.name)}
+                            /><span>Google Home</span>
+                            <br />
+                            <br />
+                            <input
+                                type="checkbox"
+                                name="apple"
+                                checked={this.props.vendors.apple}
+                                onChange={(e) => this.props.updateVendorSelection(e.target.name)}
+                            /><span>Apple Home</span>
+                            <br />
+                            <br />
+                            <button>Publish</button>
+                            <br />
+                            <br />
+                        </Modal>
                     </div>
                 ) : (
                     null

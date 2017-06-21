@@ -2,12 +2,12 @@ import React from 'react';
 
 class Modal extends React.Component {
   render() {
+
     // Render nothing if the "show" prop is false
     if(!this.props.show) {
       return null;
     }
 
-    // The gray background
     const backdropStyle = {
       position: 'fixed',
       top: 0,
@@ -18,11 +18,10 @@ class Modal extends React.Component {
       padding: 50
     };
 
-    // The modal "window"
     const modalStyle = {
       backgroundColor: '#fff',
       borderRadius: 5,
-      maxWidth: 500,
+      maxWidth: 300,
       minHeight: 300,
       margin: '0 auto',
       padding: 30
@@ -34,7 +33,7 @@ class Modal extends React.Component {
           {this.props.children}
 
           <div className="footer">
-            <button onClick={this.props.onClose}>
+            <button onClick={this.props.toggleModal}>
               Close
             </button>
           </div>
