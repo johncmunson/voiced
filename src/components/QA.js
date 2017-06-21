@@ -11,8 +11,8 @@ class QA extends React.Component {
                     <div>
                         {this.props.qa.map((qa, i) => (
                             <div key={i}>
-                                Q:<p>{qa.question}</p>
-                                A:<p>{qa.answer}</p>
+                                Q:&nbsp;<p>{qa.question}</p>
+                                A:&nbsp;<p>{qa.answer}</p>
                             </div>
                         ))}
                     </div>
