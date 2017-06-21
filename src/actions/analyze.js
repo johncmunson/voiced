@@ -8,7 +8,12 @@ export default function analyze(url) {
             method: 'get',
             url: `http://www.langbench.com:8080/Web2Sentence/Load?format=text%2Fhtml&src=${encodeURIComponent(url)}`
         })
-            .then(response => console.log(response))
+            .then(response => {
+                axios({
+                    method: 'get',
+                    url: `http://www.langbench.com:8080/Source2Question/proposeQuestions?src=${encodeURIComponent(url)}`
+                })
+            })
             .catch(err => console.log(err))
     }
 }

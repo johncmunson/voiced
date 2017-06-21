@@ -1,4 +1,3 @@
-import { connect } from 'react-redux'
 import axios from 'axios'
 import requestingQA from './requestingQA.js'
 import receiveQA from './receiveQA.js'
