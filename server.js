@@ -20,7 +20,7 @@ app.get('/api/primer', (req, res) => {
             url: `http://www.langbench.com:8080/Source2Question/proposeQuestions?src=${encodeURIComponent(req.query.url)}`
         })
         .then(response => res.sendStatus(200))
-        .catch(err => console.log('ADLKFJA;LDKFJ;ADLKSFJ;LASDKFJ DAS;LFKJ ADSLFKJ ;ALDSKFJ ;LADKSFJ ;LKDFJ ;LAKDSJF ;LKADSFJ ;LKADSJF ;LKJDSA ;LFKJ ;ADSLKFJ ;ALSKD FJ;DALSKFJ ;ALKDSFJ ;LADKSFJ', err))
+        .catch(err => console.log(err))
     })
     .catch(err => console.log(err))
 })
